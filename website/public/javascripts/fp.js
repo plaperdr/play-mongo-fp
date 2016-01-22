@@ -144,7 +144,7 @@ document.body.appendChild(node);
 
 var flashvars = {};
 var flashparams = { allowScriptAccess: "always", menu: "false" };
-swfobject.embedSWF("OSData.swf", "OSData", "0", "0", "9.0.0", false, flashvars, flashparams, {});
+swfobject.embedSWF("assets/javascripts/OSData.swf", "OSData", "0", "0", "9.0.0", false, flashvars, flashparams, {});
 
 var fontsFlash,resolutionFlash,languageFlash,platformFlash;
 if((plugins.indexOf("flash") > -1) || (plugins.indexOf("Flash") > -1)){

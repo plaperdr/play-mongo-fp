@@ -1,8 +1,10 @@
 FROM java:latest
 MAINTAINER Pierre Laperdrix
 
-ADD prod.zip /opt/
-RUN unzip /opt/prod.zip -d /opt/website && rm /opt/prod.zip
-WORKDIR /opt/website/bin
+ADD website /opt/tmp/
+WORKDIR /opt/
+RUN ./tmp/activator stage && cp -r tpm/target/universal/stage/ /opt/website/ && ./tmp/activator clean && rm -r /opt/tmp/ /root/.sbt/ /root/.ivy2/
 
-CMD ["./website"]
+WORKDIR /opt/website/
+
+CMD ["./bin/website"]
